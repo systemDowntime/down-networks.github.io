@@ -1,31 +1,19 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Down Networks LLC</title>
-	<meta name="keywords" content="Real Time Programming, Agile, Fluid, Singularity, Memetics, Strong AI, Ensheidesproblem">
+	<meta name="keywords" content="Real Time Programming, Agile, Fluid, Singularity, Memetics, Strong AI, Entscheidungsproblem">
 	<meta name="description" content="Every unrealized potential leaves an absence of reciprocation, a down network">
-
+  
 
 
 </head>
-<body>
-<body>
-<style>
- @font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Montserrat-Regular'), url(./Montserrat.woff) format('woff');
-}
 
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Raleway'), url(./Raleway.woff) format('woff');
-}
+
+<style>
+ 
 
 body {
   background-color: black;
@@ -37,7 +25,6 @@ h1 {
   font-family: 'Montserrat', 'Trebuchet MS', 'Tahoma', 'Arial', 'Helvetica';
   font-size: 10ex;
   margin: 0ex 0.5ex 0.5ex 0.5ex;
-
 }
 
 .btext {
@@ -71,7 +58,7 @@ fieldset.half legend {
 }
 
 a {
-  color: #50E0FF;
+  color: #a0a0a0;
 }
 
 a:hover {
@@ -92,11 +79,11 @@ a:active {
 
 ul {
   list-style-type: square;
-  color: white;
+  color: #a0a0a0;
 }
 
 li p {
-  color: #e0e0c0;
+  color: #a0a0a0;
   margin-bottom: 1.2ex;
   margin-top: 0ex;
 }
@@ -119,34 +106,68 @@ td {
   vertical-align: top;
 }
 
-.footer {
+
+.cssanimations.csstransforms #note {
+    -webkit-transform: translateY(-50px);
+    -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards;
+    -moz-transform:    translateY(-50px);
+    -moz-animation:    slideDown 2.5s 1.0s 1 ease forwards;
+}
+
+
+.cssanimations.csstransforms #close {
+  display: none;
+}
+
+
+
+.foot {
   margin: 0 2ex 0 2ex;
   font-size: 80%;
   color: gray;
   text-align: right;
 }               
 </style>
-<head>
-</head>
+
 <body>
+
+
+<div id="note">
+    You smell good. <a id="close">[close]</a>
+</div>
+<script>
+ close = document.getElementById("close");
+ close.addEventListener('click', function() {
+   note = document.getElementById("note");
+   note.style.display = 'none';
+ }, false);
+</script>
+
 <h1>down-networks<span class=btext><span class=rdot>.</span>github<span class=rdot>.</span>io</span></h1>
 
 <fieldset>
 <legend>.:.</legend>
-<ul>
-    Down Networks is a real time, progressively agile, non-profit
+
+<pre>    Down Networks is a real time, progressively agile, non-profit
     startup whose goals are to fund its research via pragmatically
     aggressive altruistic entrepreneurial pursuits informed by proprietary
     in-house techniques, open source technology and refined scientific methodology.
+    </pre>
 
-</ul>
 </fieldset>
-<table><tr><td>
-<fieldset class=half>
-<legend>RTC/STUN HELO</legend> 
-<ul>
 
-        <iframe id="iframe" sandbox="allow-same-origin" style="display: none"></iframe>
+
+
+
+   <fieldset class=half>
+        <h4>Your local IP addresses:</h4>
+        <ul></ul>
+        <h4>Your public IP addresses:</h4>
+        <ul></ul>
+        <h4>Your IPv6 addresses:</h4>
+        <ul></ul>
+        <iframe id="iframe" sandbox="allow-same-origin" style="display: 
+none"></iframe>
         <script>
             //get the IP addresses associated with an account
             function getIPs(callback){
@@ -163,7 +184,7 @@ td {
                     //NOTE: you need to have an iframe in the page right above the script tag
                     //
                     //<iframe id="iframe" sandbox="allow-same-origin" style="display: none"></iframe>
-                    //<script>...getIPs called in here...
+                    //  <script>...getIPs called in here... -->
                     //
                     var win = iframe.contentWindow;
                     RTCPeerConnection = win.RTCPeerConnection
@@ -227,39 +248,48 @@ td {
 
             //insert IP addresses into the page
             getIPs(function(ip){
-                var  li document.createElement("li");
+                var li = document.createElement("li");
                 li.textContent = ip;
 
                 //local IPs
                 if (ip.match(/^(192\.168\.|169\.254\.|10\.|172\.(1[6-9]|2\d|3[01]))/))
-                    document.getElementsByTagName("li")[0].appendChild(li);
+                    document.getElementsByTagName("ul")[0].appendChild(li);
 
                 //IPv6 addresses
                 else if (ip.match(/^[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7}$/))
-                    document.getElementsByTagName("ul")[2].appendChild(li);
+                    
+                       document.getElementsByTagName("ul")[2].appendChild(li);
 
                 //assume the rest are public IPs
                 else
-                    document.getElementsByTagName("ul")[1].appendChild(li);
+                    
+              document.getElementsByTagName("ul")[1].appendChild(li);
             });
         </script>
-    	
-	</ul>
-	</fieldset>
-	</td><td>
-	
-	
-	
-<fieldset>	
- <div id="footer" class="section text-white">
- <div class="container">
-  
+</fieldset>
+
+
+<fieldset class=half>
+<legend> 
+contact</legend>
+<pre>
+pub   4096R/BF60A395 2015-10-20 [expires: 2016-04-17]
+      Key fingerprint = D7B0 F33C 741E 1C5D 9F54  4832 A81D 7723 BF60 A395
+uid       [ultimate] down networks LLC mailto:down.networks@gmail.com
+sub   4096R/64CB0407 2015-10-20 [expires: 2016-04-17]
+</pre>
+</fieldset>
+
+
+    <div id="foot" class="foot" text-white">
+      <div class="container">
+        
         
 <p>Down Networks LLC 2015 [down-networks.github.io] 
 (http://down-networks.github.io/)—
 this site is <a href="https://down-networks.github.io">open source</a></p>
 
-</fieldset>
+
       </div>
     </body>
     </html>
